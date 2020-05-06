@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1> {{ app_name }} </h1>
+	<h2> {{ app_created_by }} -  {{ app_number }} </h3>
+	<div>
+		Get Started with
+		<a href="{% url 'upload' %}">Upload a File</a>
+	</div>
+	
+{% endblock %}
