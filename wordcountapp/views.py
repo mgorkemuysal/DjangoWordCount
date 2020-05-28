@@ -39,6 +39,7 @@ def wordcount_view(request):
 			runner.run()
 			for key, value in mrjob.parse_output(runner.cat_output()):
 				word_count[key] = value
+		word_count = sorted(word_count.items(), key = lambda x: x[1], reverse = True)
 		return render(request, 'wordcount.html', {
 			'word_count': word_count
 		})
